@@ -1,11 +1,9 @@
-fastapi==0.79.0
-pydantic==1.9.2
+fastapi==0.84.0
+pydantic==1.10.2
 uvicorn==0.18.2
 alembic==1.8.1
 python-dotenv==0.19.2
 sqlalchemy==1.4.35
-databases==0.6.1
-# sqlmodel==0.0.6
 asyncpg==0.26.0
 pytz==2022.1
 ua_parser==0.15.0

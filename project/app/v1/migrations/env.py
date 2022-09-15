@@ -10,9 +10,21 @@ from alembic import context
 from db.config import Base
 from db.models import User, Team
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
+
+# here we allow ourselves to pass interpolation vars to alembic.ini
+# fron the host env
+section = config.config_ini_section
+config.set_section_option(section, "DB_USER", os.getenv("DB_USER"))
+config.set_section_option(section, "DB_PSWD", os.getenv("DB_PSWD"))
+config.set_section_option(section, "DB_NAME", os.getenv("DB_NAME"))
+config.set_section_option(section, "DB_ADDRESS", os.getenv("DB_ADDRESS"))
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.

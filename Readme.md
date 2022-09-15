@@ -39,3 +39,9 @@ alembic upgrade head
 ```bash
 alembic upgrade head
 ```
+
+#### Docker Exec
+
+```bash
+docker exec -w /myapp/app/v1 51fa0bf13ee3 alembic upgrade head
+```
