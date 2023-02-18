@@ -7,9 +7,8 @@ from .config import Base
 
 @declarative_mixin
 class Timestamp:
-    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
-    updated_at = Column(DateTime, default=datetime.utcnow, nullable=False)
-
+    created_at = Column(DateTime(timezone=True), default=datetime.utcnow)
+    updated_at = Column(DateTime(timezone=True), onupdate=datetime.now, default=datetime.utcnow)
 
 # Parrent
 class Team(Timestamp, Base):
